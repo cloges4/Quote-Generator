@@ -51,7 +51,7 @@ async function getQuote() {
   }
 }
 
-// random generator
+// favorite Quotes
 
 const favoriteQuotes = [
   {
@@ -71,7 +71,13 @@ const favoriteQuotes = [
     author: 'George Santayana',
   },
 ];
-// alert(favoriteQuotes[0].quote);
+
+// random generator
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+console.log(randomNumber(0, 4));
 // Twitter Quote
 
 function tweetQuote() {
