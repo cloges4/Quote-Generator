@@ -51,33 +51,6 @@ async function getQuote() {
   }
 }
 
-// favorite Quotes
-
-const favoriteQuotes = [
-  {
-    quote: "Be so good they can't ignore you.",
-    author: 'Steve Martin',
-  },
-  {
-    quote: 'Choose a job you love, and you will never have to work a day in your life.',
-    author: 'Confucius',
-  },
-  {
-    quote: "Don't let someone else's opinion of you become your reality.",
-    author: 'Les Brown',
-  },
-  {
-    quote: 'Those who cannot remember the past are condemned to repeat it.',
-    author: 'George Santayana',
-  },
-];
-
-// random generator
-
-function randomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
-}
-console.log(randomNumber(0, 4));
 // Twitter Quote
 
 function tweetQuote() {
@@ -90,5 +63,6 @@ function tweetQuote() {
 // EventListeners
 newQuoteBtn.addEventListener('click', getQuote);
 twitterBtn.addEventListener('click', tweetQuote);
+
 // On Load
 getQuote();
