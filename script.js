@@ -25,25 +25,25 @@ function complete() {
 
 async function getQuote() {
   loading();
-  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-  const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
+  // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  const apiUrl = 'http://quotes.stormconsultancy.co.uk/random.json';
   try {
-    const response = await fetch(proxyUrl + apiUrl);
+    const response = await fetch(apiUrl);
     const data = await response.json();
-    if (data.quoteAuthor === '') {
+    if (data.author === '') {
       authorText.innerText = 'Unknown';
     } else {
-      authorText.innerText = data.quoteAuthor;
+      authorText.innerText = data.author;
     }
 
     // reduce font size for long quotes
-    if (data.quoteText.length > 120) {
+    if (data.quote.length > 120) {
       quoteText.classList.add('long-quote');
     } else {
       quoteText.classList.remove('long-quote');
     }
 
-    quoteText.innerText = data.quoteText;
+    quoteText.innerText = data.quote;
     // Stop Loader Show Quote
     complete();
   } catch (error) {
