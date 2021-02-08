@@ -25,7 +25,6 @@ function complete() {
 
 async function getQuote() {
   loading();
-  // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   const apiUrl = 'http://quotes.stormconsultancy.co.uk/random.json';
   try {
     const response = await fetch(apiUrl);
