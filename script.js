@@ -25,7 +25,7 @@ function complete() {
 
 async function getQuote() {
   loading();
-  const apiUrl = 'http://quotes.stormconsultancy.co.uk/random.json';
+  const apiUrl = 'https://quotes.stormconsultancy.co.uk/random.json';
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
