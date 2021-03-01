@@ -36,7 +36,7 @@ async function getQuote() {
     }
 
     // reduce font size for long quotes
-    if (data.content.length > 120) {
+    if (data.content.length > 100) {
       quoteText.classList.add('long-quote');
     } else {
       quoteText.classList.remove('long-quote');
