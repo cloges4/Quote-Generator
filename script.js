@@ -25,7 +25,7 @@ function complete() {
 
 async function getQuote() {
   loading();
-  const apiUrl = 'http://quotes.stormconsultancy.co.uk/random.json';
+  const apiUrl = 'https://api.quotable.io/random';
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
@@ -36,13 +36,13 @@ async function getQuote() {
     }
 
     // reduce font size for long quotes
-    if (data.quote.length > 120) {
+    if (data.content.length > 120) {
       quoteText.classList.add('long-quote');
     } else {
       quoteText.classList.remove('long-quote');
     }
 
-    quoteText.innerText = data.quote;
+    quoteText.innerText = data.content;
     // Stop Loader Show Quote
     complete();
   } catch (error) {
